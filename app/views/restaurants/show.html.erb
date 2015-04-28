@@ -1,2 +1,32 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<h1><%= @restaurant.name %></h1>
+
+<%= form_for([@restaurant,@reservation]) do |f| %>
+  <div class="field">
+    <%= f.label :time %>
+    <%= f.select :time, @hours_open %>
+  </div>
+  <div class="field">
+    <%= f.label :party_size %>
+    <%= f.text_field :party_size %>
+  </div>
+  <div class="field">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<% @restaurant.reservations.each do |reservation| %>
+  <p>
+    <%= reservation.time %>
+    (<%= reservation.party_size %> people)
+    <br>
+    <% if reservation.user != nil %>
+      <em> by <%= reservation.user.email %></em>
+      Added on: <%= reservation.created_at %>
+    <% end %>
+  </p>
+<% end %>
+
+<div>
+<%= link_to "Back to all restaurants", restaurants_path %>
+</div>
+

@@ -18,6 +18,11 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    if current_user
+      @reservation = @restaurant.reservations.build()
+    end
+
+    @hours_open = (11..23).to_a
   end
 
   def destroy

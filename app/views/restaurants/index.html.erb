@@ -1,15 +1,17 @@
 <h1>SeatYourself</h1>
 
-<div>
+<ul>
 <% @restaurants.each do |restaurant| %>
   <p>
+  <%= link_to restaurant_path(restaurant) do %>
    Restaurant Name: <%= restaurant.name %>,
    Address: <%= restaurant.address %>,
    Website: <%= restaurant.website_url %>
-
+   <% end %>
   </p>
 <% end %>
-</div>
+</ul>
+
 </div>
 <%= link_to "Add a Restaurant", new_restaurant_path %>
 </div>
