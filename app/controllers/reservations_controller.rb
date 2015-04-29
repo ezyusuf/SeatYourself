@@ -1,15 +1,14 @@
 class ReservationsController < ApplicationController
+  before_filter :ensure_logged_in, only: [:create, :destroy]
   before_filter :load_restaurant
-  def new
-    @reservations = Reservation.new
-  end
 
-  def show
-    @reservation = Reservation.find(params[:id])
-  end
 
   def create
     @reservation = @restaurant.reservations.build(reservation_params)
+
+    # @reservation = Reservation.new(reservation_params)
+    # @reservation.restaurant = @restaurant
+
     @reservation.user = current_user
     if @reservation.save
       redirect_to restaurant_path(@restaurant), notice: "Reservation created successfully"

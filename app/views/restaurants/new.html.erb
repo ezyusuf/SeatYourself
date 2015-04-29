@@ -1,6 +1,15 @@
 <h1>Add a restaurant</h1>
 
 <%= form_for @restaurant do |f| %>
+  <% if @restaurant.errors.any? %>
+      <h2><%= pluralize(@restaurant.errors.count,"error") %> prohibited this restaurant from being saved:</h2>
+      <ul>
+          <% @restaurant.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+      </ul>
+  <% end %>
+
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
