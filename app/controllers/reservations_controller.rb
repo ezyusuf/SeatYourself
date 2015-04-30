@@ -20,7 +20,7 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
-    redirect_to restaurant_path
+    redirect_to restaurant_path(@reservation.restaurant)
   end
 
 private

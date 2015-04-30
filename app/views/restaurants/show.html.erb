@@ -1,7 +1,7 @@
 <h1><%= @restaurant.name %></h1>
 
 <% if current_user %>
-  <%= form_for([@restaurant,@reservation]) do |f| %>
+  <%= form_for([@restaurant, @reservation]) do |f| %>
     <div class="field">
       <%= f.label :time %>
       <%= f.select :time, @hours_open %>
@@ -26,7 +26,7 @@
       Added on: <%= reservation.created_at %>
     <% end %>
     <br>
-    <%= link_to "Delete", method: :delete %>
+    <%= link_to "Delete", restaurant_reservation_path(@restaurant, reservation), method: :delete %>
   </p>
 <% end %>
 
