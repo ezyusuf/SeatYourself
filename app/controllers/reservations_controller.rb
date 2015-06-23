@@ -4,6 +4,7 @@ class ReservationsController < ApplicationController
 
 
   def create
+
     @reservation = @restaurant.reservations.build(reservation_params)
 
     # @reservation = Reservation.new(reservation_params)
@@ -13,7 +14,7 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to restaurant_path(@restaurant), notice: "Reservation created successfully"
     else
-      render :new
+       redirect_to restaurant_path(@restaurant), notice: "Error: Party size cannot be more than 10 people"
     end
   end
 
