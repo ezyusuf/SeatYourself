@@ -3,10 +3,10 @@
 }
 
 .headerwrap {
-    // background-image: url("http://upload.wikimedia.org/wikipedia/commons/d/dd/Muybridge_race_horse_animated.gif");
+    background-image: url("http://upload.wikimedia.org/wikipedia/commons/d/dd/Muybridge_race_horse_animated.gif");
     background-size: cover;
     width:100%;
-    height:528px;
+    height:460px;
     background-repeat: no-repeat;
     margin: 0 auto;
     padding-top: 130px;
@@ -19,6 +19,10 @@
     // padding-left: 50px;
     padding: 15px 0 0 30px;
     margin-right:-40px;
+}
+
+.jumbotron h1.covercolor1{
+    color:black;
 }
 
 .covercolor{
