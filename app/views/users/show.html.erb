@@ -1,0 +1,3 @@
+ <% if @user.avatar.url(:medium) %>
+    <%= image_tag @user.avatar,:class => 'profile-avatar' %>
+  <% end %>

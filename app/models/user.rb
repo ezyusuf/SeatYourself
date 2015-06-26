@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
   has_many :restaurants, through: :reservations
 
   validates :name,:email, presence: true
+
+  mount_uploader :avatar, AvatarUploader
 end
