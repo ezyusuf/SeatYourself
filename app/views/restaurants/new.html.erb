@@ -23,8 +23,20 @@
     <%= f.text_field :website_url %>
   </div>
   <div class="field">
-    <%= f.submit %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
   </div>
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+  <p>OR</p>
+  <div class="field">
+    <label>My Avatar URL:</label>
+    <%= image_tag(@restaurant.image_url) if @restaurant.image? %>
+    <%= f.text_field :remote_image_url %>
+  </div>
+  <%= f.submit %>
 <% end %>
 
 <%= link_to "Back to all restaurants", restaurants_path %>

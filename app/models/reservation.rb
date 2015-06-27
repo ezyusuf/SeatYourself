@@ -4,6 +4,7 @@ class Reservation < ActiveRecord::Base
 
   validate :less_than_max_occupancy
 
+
   def less_than_max_occupancy
     if self.party_size > 10
       errors.add(:base, "Sorry, too many people!")

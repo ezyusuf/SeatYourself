@@ -3,4 +3,7 @@ class Restaurant < ActiveRecord::Base
   has_many :users, through: :reservations
 
   validates :name, :address, presence: true
+
+  mount_uploader :image, ImageUploader
+
 end
