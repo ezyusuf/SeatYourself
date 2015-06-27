@@ -103,3 +103,36 @@
 </div>
 <%= link_to "Add a Restaurant", new_restaurant_path %>
 </div>
+
+<!-- Experimenting with new section -->
+
+<section id="portfolio">
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <h2>Restaurants</h2>
+              <hr class="star-primary">
+          </div>
+      </div>
+      <div class="row">
+        <% @restaurants.each do |restaurant| %>
+          <div class="col-sm-4 portfolio-item">
+            <%= link_to restaurant_path(restaurant), :class => "portfolio-link" do %>
+              <div class="caption">
+                <div class="caption-content">
+                    <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <%= image_tag restaurant.image.url(:medium),:class => 'img-responsive' %>
+            <% end %>
+          </div>
+        <% end %>
+        <p class="align"><a class="btn btn-primary btn-lg" href="#" role="button">Add Restaurant</a></p>
+      </div>
+    </div>
+</section>
+
+
+
+
+
