@@ -41,8 +41,17 @@ footer{
     text-align:center;
 }
 
-.reserveform{
-    padding-top:30px;
+.reserve-form{
+    margin-top:5px;
+}
+
+.reserve-heading{
+    padding-top:70px;
+    text-decoration:underline;
+}
+
+.reserve-party{
+    padding-top:10px;
 }
 
 .reservation {
@@ -95,4 +104,27 @@ input[type=radio]:checked + label.reserve {
 
 .res_submit{
     margin-top:10px;
+}
+
+.restaurant-main{
+    overflow:auto
+}
+
+.restaurant-labels{
+    padding-left:475px;
+}
+
+.restaurant-image{
+    border-radius:80px;
+    margin-left:70px;
+    float:left;
+}
+
+.reserve-times{
+    padding-left:100px;
+}
+
+.restaurant-back{
+    margin-top:60px;
+    font-size:22px;
 }

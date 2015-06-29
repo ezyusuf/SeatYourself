@@ -1,23 +1,30 @@
 
-<h1><%= @restaurant.name %></h1>
-<%= image_tag @restaurant.image.url(:medium) %>
-<p><%= @restaurant.description %></p>
-<div> <%= @restaurant.address %></div>
-<%= link_to "Website", @restaurant.website_url %>
+<div class="restaurant-main">
+  <%= image_tag @restaurant.image.url(:medium),:class => 'restaurant-image' %>
+  <div class="restaurant-labels">
+  <h1><%= @restaurant.name %></h1>
+  <p><%= @restaurant.description %></p>
+  <div> <%= @restaurant.address %></div>
+  <%= link_to "Website", @restaurant.website_url %>
+  </div>
+</div>
 
+<h3 class="align reserve-heading"> Reserve Time</h3>
 <% if current_user %>
-  <%= form_for([@restaurant, @reservation], :html => {:class => 'reserveform'}) do |f| %>
-      <%= f.label :time %>
-      <%= f.select :time, @hours_open %>
-      <%= f.label :party_size %>
-      <%= f.text_field :party_size %>
-      <div class="times">
+  <%= form_for([@restaurant, @reservation], :html => {:class => 'reserve-form'}) do |f| %>
+      <div class="times reserve-times">
         <% @restaurant.hours_open.each do |h| %>
           <%= f.radio_button :time, h %>
           <%= f.label "time_#{h}", new_time(h), class: "reserve" %>
         <% end %>
       </div>
+      <div class="reserve-party align">
+      <%= f.label :party_size,'Please enter party size' %>
+      <%= f.text_field :party_size %>
+      </div>
+      <div class="reserve-party align">
       <%= f.submit %>
+      </div>
   <% end %>
 <% end %>
 
@@ -35,7 +42,7 @@
   </p>
 <% end %>
 
-<div>
+<div class="align restaurant-back">
 <%= link_to "Back to all restaurants", restaurants_path %>
 </div>
 
