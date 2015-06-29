@@ -46,11 +46,15 @@
                   <a href="#contact">Contact</a>
               </li>
               <li class="page-scroll">
-                    <div class="userinfo">
+                    <div class="user-nav">
                       <% if current_user %>
-                        Signed in as <%= current_user.name %> <%= link_to "Log out", session_path("current"), :method => :delete %>
+                        <%= link_to user_path(current_user) do %>
+                          <%= image_tag current_user.avatar.url(:thumb),:class => 'user-thumb-image'%>
+                          <%= current_user.name %>
+                          <% end %>
+                        <%= link_to "Log out", session_path("current"), :method => :delete %>
                       <% else %>
-                      <%= link_to "Log in", new_session_path %> / <%= link_to "Sign up", new_user_path %>
+                        <%= link_to "Log in", new_session_path %> / <%= link_to "Sign up", new_user_path %>
                       <% end %>
                     </div>
               </li>

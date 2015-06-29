@@ -19,13 +19,6 @@ body{
     opacity: 0.7;
 }
 
-.userinfo{
-    // padding-top:8px;
-    // padding-left: 50px;
-    padding: 15px 0 0 30px;
-    margin-right:-40px;
-}
-
 .jumbotron h1.covercolor1{
     color:black;
 }
@@ -137,4 +130,19 @@ input[type=radio]:checked + label.reserve {
 .restaurant-back{
     margin-top:60px;
     font-size:22px;
+}
+
+.user-nav{
+    // padding-top:8px;
+    // padding-left: 50px;
+    padding: 8px 8px 0 30px;
+    margin-right:-40px;
+}
+
+.user-thumb-image{
+    border-radius:40px;
+}
+
+.user-thumb-name{
+    color:black;
 }
