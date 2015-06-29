@@ -1,21 +1,23 @@
+
 <h1><%= @restaurant.name %></h1>
 <%= image_tag @restaurant.image.url(:medium) %>
 <p><%= @restaurant.description %></p>
-<p><%= @restaurant.website_url %></p>
+<div> <%= @restaurant.address %></div>
+<%= link_to "Website", @restaurant.website_url %>
 
 <% if current_user %>
-  <%= form_for([@restaurant, @reservation]) do |f| %>
-    <div class="field">
+  <%= form_for([@restaurant, @reservation], :html => {:class => 'reserveform'}) do |f| %>
       <%= f.label :time %>
       <%= f.select :time, @hours_open %>
-    </div>
-    <div class="field">
       <%= f.label :party_size %>
       <%= f.text_field :party_size %>
-    </div>
-    <div class="field">
+      <div class="times">
+        <% @restaurant.hours_open.each do |h| %>
+          <%= f.radio_button :time, h %>
+          <%= f.label "time_#{h}", new_time(h), class: "reserve" %>
+        <% end %>
+      </div>
       <%= f.submit %>
-    </div>
   <% end %>
 <% end %>
 

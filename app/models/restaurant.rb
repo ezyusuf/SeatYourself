@@ -6,4 +6,8 @@ class Restaurant < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  def hours_open
+    (open...close).to_a
+  end
+
 end

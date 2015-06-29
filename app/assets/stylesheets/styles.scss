@@ -37,6 +37,62 @@ footer{
     color:black;
 }
 
-.navpad{
+.align {
+    text-align:center;
+}
 
+.reserveform{
+    padding-top:30px;
+}
+
+.reservation {
+  padding: 0;
+  margin: 0;
+  background: none;
+  box-shadow: none;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  width: 100vw;
+  text-shadow: 0 1px 1px black;
+  input[type=number] {
+    width: 2em;
+    font-size: 1em;
+    border-radius: 0;
+  }
+  input[type=date] {
+    font-size: 1em;
+    width: 15em;
+  }
+  label {
+    font-size: 1em;
+  }
+  .times {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 30vw;
+  }
+}
+
+label.reserve {
+  display: inline-block;
+  width: 5em;
+  text-align: center;
+  font-size: .8em;
+  background: rgb(20, 20, 126);
+  color: white;
+  padding: 2px;
+  margin: 2px;
+  &:hover {
+    background: black;
+  }
+}
+
+input[type=radio]:checked + label.reserve {
+  background: black;
+}
+
+.res_submit{
+    margin-top:10px;
 }
