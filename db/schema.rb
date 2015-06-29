@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150627001835) do
+ActiveRecord::Schema.define(version: 20150629025058) do
 
   create_table "reservations", force: :cascade do |t|
     t.integer  "restaurant_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20150627001835) do
     t.string   "image"
     t.integer  "open",        default: 10
     t.integer  "close",       default: 23
+    t.text     "tag"
   end
 
   create_table "users", force: :cascade do |t|
