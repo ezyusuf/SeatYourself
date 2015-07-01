@@ -30,7 +30,7 @@
 
 <% @restaurant.reservations.each do |reservation| %>
   <p>
-    Reservation Time: <%= reservation.time %>,
+    Reservation Time: <%= new_time(reservation.time) %>,
     No of People: <%= reservation.party_size %> people
     <br>
     <% if reservation.user != nil %>

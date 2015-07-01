@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150629025058) do
+ActiveRecord::Schema.define(version: 20150701234512) do
 
   create_table "reservations", force: :cascade do |t|
     t.integer  "restaurant_id"
     t.integer  "user_id"
-    t.datetime "time"
+    t.integer  "time"
     t.integer  "party_size"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.datetime "date"
   end
 
   add_index "reservations", ["restaurant_id"], name: "index_reservations_on_restaurant_id"

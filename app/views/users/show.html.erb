@@ -8,3 +8,13 @@
   </div>
 </div>
 <hr/>
+
+<h3 class="align">Reservations</h3>
+
+<% @user.reservations.each do |reservation| %>
+  <div class="user-reservation">
+    <p>Restaurant: <%= reservation.restaurant.name %></p>
+    <p>Reserved Time: <%= new_time(reservation.time) %></p>
+    <p>Party Size: <%= reservation.party_size %></p>
+  </div>
+<% end %>

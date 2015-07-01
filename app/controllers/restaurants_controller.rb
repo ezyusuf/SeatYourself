@@ -19,7 +19,6 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     @reservation = Reservation.new if current_user
-    @hours_open = (11..23).to_a
   end
 
   def destroy
