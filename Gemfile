@@ -31,8 +31,7 @@ gem 'autoprefixer-rails'
 gem "carrierwave"
 gem "mini_magick"
 
-gem 'bourbon'
-gem 'neat'
+
 
 
 # Use Unicorn as the app server

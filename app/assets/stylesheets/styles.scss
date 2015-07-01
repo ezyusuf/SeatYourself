@@ -147,14 +147,6 @@ input[type=radio]:checked + label.reserve {
     color:black;
 }
 
-.user-profile{
- // @include media(min-width:780px) {
- //       @include span-columns(6);
- //     }
-      @include media(769px) {
-      padding-top:100px;
-     }
-}
 
 .user-profile-heading{
     margin-top:-70px;
@@ -163,4 +155,5 @@ input[type=radio]:checked + label.reserve {
 
 .user-profile-image{
     max-width:100%;
+
 }
