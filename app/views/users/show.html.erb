@@ -1,1 +1,8 @@
-<%= image_tag @user.avatar.url %>
+<div class="user-profile align">
+  <h3 class="user-profile-heading">Profile</h3>
+  <%= image_tag @user.avatar.url, :class => "user-profile-image" %>
+  <h5>Name: <%= @user.name %></h5>
+  <h5>Email: <%= @user.email %></h5>
+  <h5>Joined On: <%= @user.created_at.strftime("%B %d, %Y") %></h5>
+</div>
+<hr/>
