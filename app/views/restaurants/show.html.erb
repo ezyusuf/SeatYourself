@@ -1,3 +1,14 @@
+<% if @reservation.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this product from being saved:</h2>
+    <ul>
+    <% @reservation.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div class="restaurant-main">
   <%= image_tag @restaurant.image.url(:medium),:class => 'restaurant-image' %>
   <div class="restaurant-labels">
@@ -30,15 +41,17 @@
 
 <% @restaurant.reservations.each do |reservation| %>
   <p>
-    Reservation Time: <%= new_time(reservation.time) %>,
-    No of People: <%= reservation.party_size %> people
-    <br>
-    <% if reservation.user != nil %>
-      <em> by <%= reservation.user.email %></em>
-      Added on: <%= reservation.created_at %>
+    <% if reservation.id != nil %>
+      Reservation Time: <%= new_time(reservation.time) %>,
+      No of People: <%= reservation.party_size %> people
+      <br>
+      <% if reservation.user != nil %>
+        <em> by <%= reservation.user.email %></em>
+        Added on: <%= reservation.created_at %>
+      <% end %>
+      <br>
+      <%= link_to "Delete", restaurant_reservation_path(@restaurant, reservation), method: :delete %>
     <% end %>
-    <br>
-    <%= link_to "Delete", restaurant_reservation_path(@restaurant, reservation), method: :delete %>
   </p>
 <% end %>
 

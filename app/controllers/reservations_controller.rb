@@ -14,7 +14,7 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to restaurant_path(@restaurant), notice: "Reservation created successfully"
     else
-       redirect_to restaurant_path(@restaurant), notice: "Error: Party size cannot be more than 10 people"
+      render "restaurants/show"
     end
   end
 
