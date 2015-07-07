@@ -6,6 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.create!({
+  email: "example@bitmakerlabs.com",
+  name: "Example User",
+  password: "pass",
+  password_confirmation: "pass"
+  }
+)
+
 Restaurant.destroy_all
 
 Restaurant.create!(
