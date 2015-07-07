@@ -1,5 +1,5 @@
 class ChangeTimeColumnTypeInReservations < ActiveRecord::Migration
   def change
-    change_column :reservations, :time, :integer
+    ALTER TABLE :reservations ALTER COLUMN :time TYPE integer USING (:time::integer);
   end
 end
