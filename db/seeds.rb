@@ -7,15 +7,15 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-User.create!({
-  email: "example@bits.com",
-  name: "User",
-  password: "pass",
-  password_confirmation: "pass"
-  }
-)
+# User.create!({
+#   email: "example@bits.com",
+#   name: "User",
+#   password: "pass",
+#   password_confirmation: "pass"
+#   }
+# )
 
-Restaurant.destroy_all
+# Restaurant.destroy_all
 
 # Restaurant.create!(
 #   :name  => "Popeyes Chicken",

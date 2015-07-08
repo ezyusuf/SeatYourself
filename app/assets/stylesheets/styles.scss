@@ -135,8 +135,12 @@ input[type=radio]:checked + label.reserve {
 .user-nav{
     // padding-top:8px;
     // padding-left: 50px;
-    padding: 8px 8px 0 30px;
+    padding: 14px 8px 0 30px;
     margin-right:-40px;
+}
+
+.user-nav-logged{
+  margin-top:-14px;
 }
 
 .user-thumb-image{

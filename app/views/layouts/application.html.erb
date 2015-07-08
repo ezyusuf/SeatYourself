@@ -49,14 +49,16 @@
               <li class="page-scroll">
                     <div class="user-nav">
                       <% if current_user %>
-                        <%= link_to user_path(current_user) do %>
-                          <%= image_tag current_user.avatar.url(:thumb),:class => 'user-thumb-image'%>
-                          <%= current_user.name %>
-                          <% end %>
-                        <%= link_to "Log out", session_path("current"), :method => :delete %>
-                      <% else %>
-                        <%= link_to "Log in", new_session_path %> / <%= link_to "Sign up", new_user_path %>
-                      <% end %>
+                      <div class="user-nav-logged">
+                          <%= link_to user_path(current_user) do %>
+                            <%= image_tag current_user.avatar.url(:thumb),:class => 'user-thumb-image'%>
+                            <%= current_user.name %>
+                            <% end %>
+                          <%= link_to "Log out", session_path("current"), :method => :delete %>
+                        <% else %>
+                          <%= link_to "Log in", new_session_path %> / <%= link_to "Sign up", new_user_path %>
+                        <% end %>
+                      </div>
                     </div>
               </li>
 
