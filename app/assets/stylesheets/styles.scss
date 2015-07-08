@@ -166,3 +166,16 @@ input[type=radio]:checked + label.reserve {
   border-style:solid;
   border-width:5px;
 }
+
+/*----------------------------------------------------
+  Flash Message
+------------------------------------------------------*/
+.flash-message{
+  font-size:16px;
+  margin-bottom:-20px;
+  margin-left:115px;
+  color:rgb(66, 132, 189);
+}
+
+
+
