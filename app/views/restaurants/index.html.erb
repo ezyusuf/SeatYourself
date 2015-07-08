@@ -18,6 +18,7 @@
       <div class="row">
         <% @restaurants.each do |restaurant| %>
           <div class="col-sm-4 portfolio-item">
+
             <%= link_to restaurant_path(restaurant), :class => "portfolio-link" do %>
               <div class="caption">
                 <div class="caption-content">
@@ -26,9 +27,12 @@
               </div>
               <%= image_tag restaurant.image.url(:medium),:class => 'img-responsive' %>
             <% end %>
+            <div class="restaurant-index-test">
+              <%= link_to restaurant.name,restaurant_path(restaurant), :class => "restaurant-index"%>
+            </div>
           </div>
         <% end %>
-        <p class="align"><a class="btn btn-primary btn-lg" href="#" role="button">Add Restaurant</a></p>
+   <!--      <p class="align"><a class="btn btn-primary btn-lg" href="#" role="button">Add Restaurant</a></p> -->
       </div>
     </div>
 </section>
@@ -44,10 +48,10 @@
         </div>
         <div class="row">
             <div class="col-lg-4 col-lg-offset-2">
-                <p>Quisque nisi ex, egestas vel tempus at, tempor eu diam. Pellentesque ullamcorper faucibus ornare. Maecenas posuere lacus eu luctus tincidunt. Duis euismod augue eu sem tristique porta. Nam placerat aliquet dolor, in congue dui fermentum et.</p>
+                <p>Quisque nisi ex, egestas vel tempus at, tempor eu diam. Pellentesque esteines ullamcorper faucibus ornare. Maecenai posuere lacus eu luctus tincidunt. Duis euismod augue eu sem tristique portai. Nam placerat aliquet dolor, in congueit dui fermentum et nueve doz trec domt.</p>
             </div>
             <div class="col-lg-4">
-                <p>Nulla a libero ac sapien finibus malesuada. Suspendisse in lacinia risus. Cras id dui lobortis, bibendum nibh eu, vestibulum purus. Maecenas sit amet consequat nisi. Maecenas quis pellentesque ipsum.</p>
+                <p>Nulla a libero ac sapien finibus hasddd malesuada. Suspendisse in lacinia don risus. Cras id dui lobortis, bibendum itt nibh eu, vestibulum purus. Maecenass sit amet consequat nisi. Maecenas quii pellentesque ipsum.Nam placerat jogsi aliquet dolor, in congue dui fermentum.</p>
             </div>
         </div>
     </div>
