@@ -1,17 +1,23 @@
-<h1>Log in</h1>
+<h1 class="align">Log in</h1>
 
-<%= form_tag sessions_path do %>
-<div class="field">
-  <%= label_tag :email %>
-  <%= text_field_tag :email, params[:email] %>
-</div>
-<div class="field">
-  <%= label_tag :password %>
-  <%= password_field_tag :password%>
-</div>
-<div class="field">
-  <%= submit_tag "Log in" %>
-</div>
-<% end %>
+<div class="container">
+  <div class="card card-container">
+    <p id="profile-name" class="profile-name-card"></p>
 
-<%= link_to "Back to restaurants", restaurants_path %>
+    <%= form_tag sessions_path , {:class => 'form-signin'} do %>
+      <div class="field align" id="inputEmail">
+        <%= label_tag :email %>
+        <%= text_field_tag :email, params[:email] %>
+      </div>
+      <div class="field align login-padding" id="inputPassword">
+        <%= label_tag :password %>
+        <%= password_field_tag :password%>
+      </div>
+      <div class="field align login-padding-1">
+        <%= submit_tag "Log in", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to "Back to restaurants", restaurants_path%>

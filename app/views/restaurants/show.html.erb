@@ -21,9 +21,11 @@
   <%= link_to "Website", @restaurant.website_url %>
   </div>
 </div>
-
-<h3 class="align reserve-heading">Reservation Times</h3>
+  <h3 class="align reserve-heading">
+    <%= link_to "Login to reserve", new_session_path %>
+  </h3>
 <% if current_user %>
+  <h3 class="align reserve-heading">Reservation Times</h3>
   <%= form_for([@restaurant, @reservation], :html => {:class => 'reserve-form'}) do |f| %>
       <div class="times reserve-times">
         <% @restaurant.hours_open.each do |h| %>
