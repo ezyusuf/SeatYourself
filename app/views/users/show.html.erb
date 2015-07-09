@@ -16,7 +16,7 @@
     <% @user.reservations.each do |reservation| %>
       <div class="user-reservation align">
         <p>Restaurant: <%= reservation.restaurant.name %></p>
-        <p>Reserved Time: <%= reservation.time.to_s + ":00" %></p>
+        <p>Reserved Time: <%= reservation.time%></p>
         <p>Party Size: <%= reservation.party_size %></p>
         <p>Added on: <%= reservation.created_at.strftime("%B %d, %Y") %></p>
 
