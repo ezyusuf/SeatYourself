@@ -1,20 +1,27 @@
-<div class="user-profile align">
-    <h3 class="user-profile-heading">Profile</h3>
-    <%= image_tag @user.avatar.url, :class => "user-profile-image" %>
-  <div class="user-profile-label">
-  <h5>Name: <%= @user.name %></h5>
-  <h5>Email: <%= @user.email %></h5>
-  <h5>Joined On: <%= @user.created_at.strftime("%B %d, %Y") %></h5>
+<% if current_user %>
+  <div class="user-profile align">
+      <h3 class="user-profile-heading">Profile</h3>
+      <%= image_tag @user.avatar.url, :class => "user-profile-image" %>
+    <div class="user-profile-label">
+    <h5>Name: <%= @user.name %></h5>
+    <h5>Email: <%= @user.email %></h5>
+    <h5>Joined On: <%= @user.created_at.strftime("%B %d, %Y") %></h5>
+    </div>
   </div>
-</div>
-<hr/>
+  <hr/>
 
-<h3 class="align">Reservations</h3>
+  <h3 class="align">Reservations</h3>
 
-<% @user.reservations.each do |reservation| %>
-  <div class="user-reservation">
-    <p>Restaurant: <%= reservation.restaurant.name %></p>
-    <p>Reserved Time: <%= new_time(reservation.time) %></p>
-    <p>Party Size: <%= reservation.party_size %></p>
+  <div class="user-reservation-box">
+    <% @user.reservations.each do |reservation| %>
+      <div class="user-reservation align">
+        <p>Restaurant: <%= reservation.restaurant.name %></p>
+        <p>Reserved Time: <%= new_time(reservation.time) %></p>
+        <p>Party Size: <%= reservation.party_size %></p>
+        <p>Added on: <%= reservation.created_at.strftime("%B %d, %Y") %></p>
+
+        <%= link_to "Remove Reservation", restaurant_reservation_path(reservation.restaurant_id, reservation), method: :delete %>
+      </div>
+    <% end %>
   </div>
 <% end %>

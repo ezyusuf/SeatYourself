@@ -151,6 +151,9 @@ input[type=radio]:checked + label.reserve {
     color:black;
 }
 
+/*----------------------------------------------------
+  User Profile Message
+------------------------------------------------------*/
 
 .user-profile-heading{
     margin-top:-70px;
@@ -165,6 +168,13 @@ input[type=radio]:checked + label.reserve {
 .user-reservation{
   border-style:solid;
   border-width:5px;
+  padding-bottom:10px;
+}
+
+.user-reservation-box{
+  padding-bottom:10px;
+  padding-left: 115px;
+  padding-right: 115px;
 }
 
 /*----------------------------------------------------

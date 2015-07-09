@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+
   end
 
   def create
@@ -18,4 +19,4 @@ class SessionsController < ApplicationController
     redirect_to :back, notice: "Logged out!"
 
   end
-end
+

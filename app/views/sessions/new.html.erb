@@ -6,7 +6,7 @@
     <%= form_tag sessions_path , {:class => 'form-signin'} do %>
       <div class="field align" id="inputEmail">
         <%= label_tag :email %>
-        <%= text_field_tag :email, params[:email] %>
+        <%= text_field_tag :email, params[:email], class: 'align' %>
       </div>
       <div class="field align login-padding" id="inputPassword">
         <%= label_tag :password %>

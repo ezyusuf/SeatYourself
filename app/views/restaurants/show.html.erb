@@ -45,22 +45,6 @@
   <% end %>
 <% end %>
 
-<% @restaurant.reservations.each do |reservation| %>
-  <p>
-    <% if reservation.id != nil %>
-      Reservation Time: <%= new_time(reservation.time) %>,
-      No of People: <%= reservation.party_size %> people
-      <br>
-      <% if reservation.user != nil %>
-        <em> by <%= reservation.user.email %></em>
-        Added on: <%= reservation.created_at %>
-      <% end %>
-      <br>
-      <%= link_to "Delete", restaurant_reservation_path(@restaurant, reservation), method: :delete %>
-    <% end %>
-  </p>
-<% end %>
-
 <div class="align restaurant-back">
 <%= link_to "Back to Main Page", restaurants_path %>
 </div>

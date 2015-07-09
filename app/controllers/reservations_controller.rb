@@ -12,7 +12,7 @@ class ReservationsController < ApplicationController
 
     @reservation.user = current_user
     if @reservation.save
-      redirect_to restaurant_path(@restaurant), notice: "Reservation created successfully"
+      redirect_to user_path(current_user), notice: "Reservation created successfully"
     else
       render "restaurants/show"
     end
@@ -21,7 +21,7 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
-    redirect_to restaurant_path(@reservation.restaurant)
+    redirect_to :back
   end
 
 private
