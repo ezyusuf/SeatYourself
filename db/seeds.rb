@@ -15,7 +15,7 @@
 #   }
 # )
 
-Restaurant.destroy_all
+# Restaurant.destroy_all
 
 
 # Restaurant.create!(

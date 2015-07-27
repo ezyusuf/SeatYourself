@@ -12,7 +12,8 @@
 <% end %>
 
 <div class="restaurant-main">
-  <%= image_tag @restaurant.image.url(:medium),:class => 'restaurant-image' %>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Resturant.jpg" alt="" class="restaurant-image">
   <div class="restaurant-labels">
   <h1><%= @restaurant.name %></h1>
   <p class="restaurant-tag"><%= @restaurant.tag %></p>
@@ -21,12 +22,7 @@
   <%= link_to "Website", @restaurant.website_url %>
   </div>
 </div>
-  <% if !current_user %>
-    <h3 class="align reserve-heading">
-      <%= link_to "Login to reserve", new_session_path %>
-    </h3>
-  <% end %>
-<% if current_user %>
+
   <h3 class="align reserve-heading">Reservation Times</h3>
   <%= form_for([@restaurant, @reservation], :html => {:class => 'reserve-form'}) do |f| %>
       <div class="times reserve-times">
@@ -43,7 +39,7 @@
       <%= f.submit %>
       </div>
   <% end %>
-<% end %>
+
 
 <div class="align restaurant-back">
 <%= link_to "Back to Main Page", restaurants_path %>
